@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>The Starbuzz Bean Machine</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="header">The Starbuzz Bean Machine</h1>
+
+    <div class="row">
+      <div class="col-md-9">
+        <p>Fill out the form below and click "Order Now" to order.</p>
+
+        <form action="https://starbuzzcoffee.com/processorder.php" method="POST">
+          <div class="row mb-3">
+            <label for="beans" class="col-sm-4 col-md-3 col-form-label text-sm-end">Choose your beans</label>
+            <div class="col-sm-8 col-md-9">
+              <select class="form-select" name="beans" id="beans">
+                <option value="House Blend">House Blend</option>
+                <option value="Bolivia">Shade Grown Bolivia Supermo</option>
+                <option value="Guatemala">Organic Guatemala</option>
+                <option value="Kenya">Kenya</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="type" class="col-sm-4 col-md-3 col-form-label text-sm-end">Type</label>
+            <div class="col-sm-8 col-md-9">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="beantype" id="beantype-whole" value="whole">
+                <label class="form-check-label" for="beantype-whole">Whole bean</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="beantype" id="beantype-ground" checked value="ground">
+                <label class="form-check-label" for="beantype-ground">Ground</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="bags" class="col-sm-4 col-md-3 col-form-label text-sm-end">Number of bags</label>
+            <div class="col-sm-8 col-md-9">
+              <input type="number" class="form-control" id="bags" name="bags" min="1" max="10" value="1">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="date" class="col-sm-4 col-md-3 col-form-label text-sm-end">Must arrive by date</label>
+            <div class="col-sm-8 col-md-9">
+              <input type="date" class="form-control" id="date" name="date">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="type" class="col-sm-4 col-md-3 col-form-label text-sm-end">Extas</label>
+            <div class="col-sm-8 col-md-9">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="extras[]" id="extras-giftwrap" value="giftwrap">
+                <label class="form-check-label" for="extras-giftwrap">Gift wrap</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="extras[]" id="extras-catalog" checked value="catalog">
+                <label class="form-check-label" for="extras-catalog">Include catalog with order</label>
+              </div>
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>Ship to</legend>
+            <!-- <div class="row">
+              <div class="offset-md-2">
+              </div>
+            </div> -->
+            <div class="row mb-3">
+              <label for="name" class="col-sm-4 col-md-3 col-form-label text-sm-end">Name</label>
+              <div class="col-sm-8 col-md-9">
+                <input type="text" class="form-control" placeholder="chandan mishra" id="name" name="name">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="address" class="col-sm-4 col-md-3 col-form-label text-sm-end">Address</label>
+              <div class="col-sm-8 col-md-9">
+                <input type="text" class="form-control" id="address" name="address">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="city" class="col-sm-4 col-md-3 col-form-label text-sm-end">City</label>
+              <div class="col-sm-8 col-md-9">
+                <input type="text" class="form-control" id="city" name="city">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="state" class="col-sm-4 col-md-3 col-form-label text-sm-end">State</label>
+              <div class="col-sm-8 col-md-9">
+                <input type="text" class="form-control" id="state" name="state">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="zip" class="col-sm-4 col-md-3 col-form-label text-sm-end">Zip</label>
+              <div class="col-sm-8 col-md-9">
+                <input type="text" class="form-control" id="zip" name="zip">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="phone" class="col-sm-4 col-md-3 col-form-label text-sm-end">Phone</label>
+              <div class="col-sm-8 col-md-9">
+                <input type="tel" class="form-control" id="phone" name="phone">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="comment" class="col-sm-4 col-md-3 col-form-label text-sm-end">Comment</label>
+              <div class="col-sm-8 col-md-9">
+                <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <p class="text-center"><button type="submit" class="btn btn-primary">Order Now</button></p>
+        </form>
+      </div>
+      <div class="col-md-3">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi quam dignissimos, neque cupiditate
+          blanditiis non ducimus, praesentium itaque, nam quasi assumenda rerum? Illo itaque nobis vel quibusdam
+          distinctio eum assumenda?</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
